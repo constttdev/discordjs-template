@@ -1,0 +1,8 @@
+services:
+  redwhale:
+    container_name: example-bot-production
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    pull_policy: build
