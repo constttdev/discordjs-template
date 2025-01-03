@@ -4,7 +4,7 @@ export const name = Events.ClientReady;
 
 export const execute = async (client) => {
   console.log(`Logged in as ${client.user.tag}`);
-  client.user.setActivity("DM me to use Mod Mail!", {
-    type: ActivityType.Watching,
+  client.user.setActivity("Create a todo with /todoadd", {
+    type: ActivityType.Playing,
   });
 };

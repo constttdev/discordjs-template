@@ -1,11 +1,12 @@
 {
-  "name": "discordjs-template",
+  "name": "todolist-bot",
   "version": "0.0.1",
   "description": "",
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "start": "npx tsx watch src/index.ts"
+    "start": "npx tsx watch src/index.ts",
+    "registercmds": "npx tsx src/registercmds.ts"
   },
   "author": "constt",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "dotenv": "^16.4.7",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
+    "pocketbase": "^0.25.0",
     "url": "^0.11.4"
   }
 }
