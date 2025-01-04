@@ -15,7 +15,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
 
   const embed = new EmbedBuilder().setTitle("Todos");
   (await todos).forEach((todo) => {
-    embed.addFields([{ name: " ", value: "`" + todo + "`", inline: false }]);
+    embed.addFields([{ name: " ", value: "`" + todo, inline: false }]);
   });
 
   await interaction.reply({ embeds: [embed], flags: MessageFlags.Ephemeral });

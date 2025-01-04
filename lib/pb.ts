@@ -24,11 +24,51 @@ export async function getTodos(user_id: number) {
     filter: `user_id = ${user_id}`,
   });
   const todos = resultList.items.map((todos) => {
-    console.log(todos.todo);
-    return `${todos.todo} ${
-      todos.checked ? ":white_check_mark:" : ":redcross:"
-    }`;
+    return `${todos.todo}\` ${todos.checked ? ":white_check_mark:" : ":x:"}`;
   });
-  console.log(todos);
   return todos;
+}
+
+export async function checkTodo(todo: string, user_id: number) {
+  const resultList = await pb.collection("todos").getList(1, 50, {
+    filter: `user_id = ${user_id} && todo = "${todo}"`,
+  });
+
+  if (!resultList.items.length) {
+    throw new Error("Todo not found");
+  }
+
+  try {
+    for (const item of resultList.items) {
+      if (!item.checked) {
+        const data = { checked: true };
+        await pb.collection("todos").update(item.id, data);
+      } else {
+        const data = { checked: false };
+        await pb.collection("todos").update(item.id, data);
+      }
+    }
+  } catch (error) {
+    console.error("Error checking todo:", error);
+  }
+
+  return resultList;
+}
+
+export async function removeTodo(todo: string, user_id: number) {
+  const resultList = await pb.collection("todos").getList(1, 50, {
+    filter: `user_id = ${user_id} && todo = "${todo}"`,
+  });
+
+  if (!resultList.items.length) {
+    throw new Error("Todo not found");
+  }
+
+  try {
+    for (const item of resultList.items) {
+      await pb.collection("todos").delete(item.id);
+    }
+  } catch (error) {
+    console.error("Error deleting todo:", error);
+  }
 }
