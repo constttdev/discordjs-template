@@ -5,14 +5,12 @@ import {
 } from "discord.js";
 
 export const data = new SlashCommandBuilder()
-  .setName("commands")
-  .setDescription("Replies with the avalible commands");
+  .setName("helloworld")
+  .setDescription("Replies with an example embed");
 
 const embed = new EmbedBuilder()
-  .setTitle("Commands")
-  .setDescription(
-    "`/todoadd <text>` Add a todo\n`/todoremove <text>` Remove a todo\n`/todos` Show all todos\n`/help` Open the help menu\n`/commands` Show all avalible"
-  );
+  .setTitle("Example Command")
+  .setDescription("This is an example command");
 
 export async function execute(interaction: ChatInputCommandInteraction) {
   await interaction.reply({ embeds: [embed], ephemeral: true });
