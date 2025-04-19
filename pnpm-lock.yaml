@@ -20,9 +20,6 @@ importers:
       path:
         specifier: ^0.12.7
         version: 0.12.7
-      pocketbase:
-        specifier: ^0.25.0
-        version: 0.25.0
       url:
         specifier: ^0.11.4
         version: 0.11.4
@@ -165,9 +162,6 @@ packages:
 
   path@0.12.7:
     resolution: {integrity: sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q==}
-
-  pocketbase@0.25.0:
-    resolution: {integrity: sha512-xbjiQG/tnh2HsjZrTW7ZEJASvl4hmGAB5PQAmNRkRU8BmrPib7zwKyXdiYJl34QN7ADpqykZD2lAMdDtrrQbuw==}
 
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
@@ -390,8 +384,6 @@ snapshots:
     dependencies:
       process: 0.11.10
       util: 0.10.4
-
-  pocketbase@0.25.0: {}
 
   process@0.11.10: {}
 
