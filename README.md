@@ -1,4 +1,4 @@
-# Toxera Network Discord Bot
+# DiscordJS Bot Template
 
 ### Commands
 
@@ -9,3 +9,10 @@ Start the bot
 Register commands
 
 - `pnpm run registercmds`
+
+### Features
+
+- Command and Event Handling
+
+
+- Example Command and example Event
