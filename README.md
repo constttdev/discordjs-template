@@ -16,3 +16,12 @@ Register commands
 
 
 - Example Command and example Event
+
+### How to make it from a setguild bot to a public bot
+
+- (OPTIONAL) Remove `GUILD_ID` in your `.env` and `.env.example` file
+
+- (OPTIONAL) Remove `const guild_id = String(process.env.GUILD_ID)` in `src/registercmds.ts`
+
+- Change `Routes.applicationGuildCommands(client_id, guild_id)` to `Routes.applicationCommands(client_id)` in `src/registercmds.ts`
+  
